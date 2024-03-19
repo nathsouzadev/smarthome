@@ -1,19 +1,10 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useRouter } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
-  const router = useRouter()
-  const connect = (event: any) => {
-    event.preventDefault()
-    console.log('Get token from backend')
-    router.push('/dashboard')
-    // console.log('Conect with Alexa')
-  }
-
+export default function Dashboard() {
   return (
     <>
       <Head>
@@ -23,7 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-      <button onClick={connect}>Conect</button>
+        <div className={styles.center}>
+          <h1>Dashboard</h1>
+        </div>
       </main>
     </>
   );
