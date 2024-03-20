@@ -7,9 +7,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter()
-  const connect = (event: any) => {
+  const connect = async (event: any) => {
     event.preventDefault()
     console.log('Get token from backend')
+    
+    const response = await fetch(process.env.URL as string) 
+    const data = await response.json()
+    console.log(data)
+
     router.push('/dashboard')
     // console.log('Conect with Alexa')
   }
