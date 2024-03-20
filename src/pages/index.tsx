@@ -11,7 +11,7 @@ export default function Home() {
     event.preventDefault()
     console.log('Get token from backend')
     
-    const response = await fetch(process.env.URL as string) 
+    const response = await fetch(process.env.SERVICE_URL as string) 
     const data = await response.json()
     console.log(data)
 
